@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <script lang="JavaScript">
+            function onT1Blur() {
+                var edt1 = document.myForm.t1;
+                var value = edt1.value;
+                edt1.value = value.toUpperCase();
+                edt2.focus();
+            }
+
+            function onLoad() {
+                var edt1 = document.myForm.t1;
+                edt1.focus();
+            }
+
+            function onBtnOKClick() {
+                var selectBox = document.myForm.selectBox;
+                var edt1 = document.myForm.t1;
+                edt1.value = selectBox.selectedIndex;
+            }
+        </script>
+    </head>
+
+    <body>
+        <form
+            name="myForm"
+            method="POST">
+            <select name="selectBox">
+                <option value="index0">Index 0</option>
+                <option value="index1">Index 1</option>
+                <option value="index2">Index 2</option>
+                <option value="index3">Index 3</option>
+            </select>
+            <input type="text" name="t1">
+            <input type="button" value="OK" onclick="onBtnOKClick()"
+        </form>
+    </body>
+</html>

@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <script lang="JavaScript">
+        function onBtnOKClick() {
+            var edtMaSV = document.form1.edtMaSV;
+            var edtHoTen = document.form1.edtHoTen;
+            var selectNamSinh = document.form1.selectNamSinh;
+            var btnFile = document.form1.btnBrowser;
+
+            var strMaSV = edtMaSV.value;
+            var strHoTen = edtHoTen.value;
+            var namSinh = selectNamSinh.value;
+        }
+    </script>
+</head>
+
+<body>
+
+    <p align="center">
+        <form name="form1" method="POST">
+            <p align="center">
+                Thông tin sinh viên
+            </p>
+            <p align="center">
+                <table>
+                    <tr>
+                        <td>Mã sinh viên</td>
+                        <td>
+                            <input type="text" name="edtMaSV" value="102150079" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Họ tên</td>
+                        <td>
+                            <input type="text" name="edtHoTen" value="Hoang Cong Tuan" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Năm sinh</td>
+                        <td>
+                            <select name="selectNamSinh">
+                                <option value="1994">1994</option>
+                                <option value="1995">1995</option>
+                                <option value="1996">1996</option>
+                                <option value="1997">1997</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Hình ảnh</td>
+                        <td>
+                            <input type="text" name="edtFilePath" />
+                        </td>
+                        <td>
+                            <input type="file" name="btnBrowser" va />
+                        </td>
+                    </tr>
+                </table>
+            </p>
+
+            <p align="center">
+                <input type="button" name="btnOK" value="OK" onclick="onBtnOKClick()">
+                <input type="reset" name="btnReset" />
+            </p>
+        </form>
+    </p>
+
+</body>
+
+</html>

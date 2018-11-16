@@ -1,0 +1,180 @@
+<html>
+    <head>
+        <title>
+            Sơ Yếu Lý Lịch
+        </title>
+
+        <script lang="JavaScript">
+
+            function myToUpperCase() {
+                var edtName = document.formSoYeuLyLich.edtName;
+                var name = edtName.value;
+                for(var i = 0; i < name.length(); i++) {
+                         if (name[i] >= 'a' && name[i] <= 'z')
+                            name[i] -= 32;
+                }
+                console.log(name)
+                return name
+            }
+
+            function upperCaseName() {
+                var edtName = document.formSoYeuLyLich.edtName;
+                var name = edtName.value;
+                name = myToUpperCase();
+                edtName.value = name;
+            }
+
+            function checkDay() {
+                var edtDay = document.formSoYeuLyLich.edtDay;
+                var day = edtDay.value;
+                if (day > 31 || day < 1) {
+                    alert("Ngay bi sai!!")
+                    edtDay.value = ""
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <p align = "center">
+            Vi du ve form
+        </p>
+        <form
+            name = "formSoYeuLyLich"
+            method = "POST"
+            action = "XuLySoYeuLyLich.js">
+             <table>
+                 <tr>
+                     <td></td>
+                     <td></td>
+                     <td>
+                        Sơ Yếu Lý Lịch
+                     </td>
+                 </tr>
+            <tr>
+                <td>
+                    Họ và Tên
+                </td>
+                <td>
+                    
+                    <input type="text" name = "edtName" onblur="upperCaseName()">
+                </td>
+
+                <td>
+                   Quê quán 
+                </td>
+                <td>
+                    <input type="text" name = "edtQueQuan">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Địa chỉ
+                </td>
+                <td>
+                    <input type="text" name = "edtDiaChi">
+                </td>
+
+                <td>
+                    Hình ảnh
+                </td>
+
+                <td>
+                    <input type="text" name="edtFileName">
+                   <input type="file" name = "filePicture" value="Browser">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Giới tính
+                </td>
+
+                <td>
+                    <input type="radio" name = "rbGioiTinh" checked = "true"> Nam
+                    <input type="radio" name="rbGioiTinh"> Nữ
+                </td>
+            </tr>
+            <tr>
+                <td>Ngày</td>
+                <td> <input type="text" name="edtDay" onblur="checkDay()"></td>
+                
+                <td> Tháng:
+                    <select name="selectThang">
+                        <option v   alue="thang1">Tháng 1</option>
+                        <option value="thang2">Tháng 2</option>
+                        <option value="thang3">Tháng 3</option>
+                        <option value="thang4">Tháng 4</option>
+                        <option value="thang5">Tháng 5</option>
+                        <option value="thang6">Tháng 6</option>
+                        <option value="thang7">Tháng 7</option>
+                        <option value="thang8">Tháng 8</option>
+                        <option value="thang9">Tháng 9</option>
+                        <option value="thang10">Tháng 10</option>
+                        <option value="thang11">Tháng 11</option>
+                        <option value="thang12">Tháng 12</option>
+                    </select>
+                </td>
+
+                <td> Năm:
+                        <select name="selectNam">
+                            <option value="nam1990">Năm 1990</option>
+                            <option value="nam1991">Năm 1991</option>
+                            <option value="nam1992">Năm 1992</option>
+                            <option value="nam1993">Năm 1993</option>
+                            <option value="nam1994">Năm 1994</option>
+                            <option value="nam1995">Năm 1995</option>
+                            <option value="nam1996">Năm 1996</option>
+                            <option value="nam1997">Năm 1997</option>
+                            <option value="nam1998">Năm 1998</option>
+                            <option value="nam1999">Năm 1999</option>
+                            <option value="nam2001">Năm 2001</option>
+                            <option value="nam2002">Năm 2002</option>
+                            <option value="nam2003">Năm 2003</option>
+                            <option value="nam2004">Năm 2004</option>
+                            <option value="nam2005">Năm 2005</option>
+                            <option value="nam2006">Năm 2006</option>
+                            <option value="nam2007">Năm 2007</option>
+                            <option value="nam2008">Năm 2008</option>
+                            <option value="nam2009">Năm 2009</option>
+                            <option value="nam2010">Năm 2010</option>
+                            <option value="nam2011">Năm 2011</option>
+                            <option value="nam2012">Năm 2012</option>
+                            <option value="nam2013">Năm 2013</option>
+                            <option value="nam2014">Năm 2014</option>
+                            <option value="nam2015">Năm 2015</option>
+                            <option value="nam2016">Năm 2016</option>
+                            <option value="nam2017">Năm 2017</option>
+                            <option value="nam2018">Năm 2018</option>
+                        </select>
+                    </td>
+            </tr> 
+
+            <tr>
+                <td>Trình độ</td>
+                <td><input type="text" name="edtTrinhDo"></td>
+            </tr>
+
+            <tr>
+                <td>Ghi Chú</td>
+                <td>
+                    <textarea name="textAreaGhiChu" rows="5">
+
+                    </textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                </td>
+                <td>
+                    <input type="button" name="btnOk" value="OK" onclick="myToUpperCase('abc')">
+                    <input type="reset" name="btnReset" value="Reset">
+                    <input type="button" name="btnCancel" value="Cancel">
+                </td>
+            </tr>
+        </table>
+
+        </form>
+    </body>
+</html>

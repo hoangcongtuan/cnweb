@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script lang="javaScript">
+                function changeBackgroundColor() {
+                    var color_background =  document.login_form.edtUserName.value;
+                    document.bgColor = color_background;
+                }
+        </script>
+    </head>
+
+    <body>
+        <form
+            name = "login_form"
+            method = "POST"
+            action = "xuly_login.html">
+
+            <input type="text" name = "edtUserName" onblur="changeBackgroundColor()"/>
+            <br>
+            <input type="password" name = "edtPassword"/>
+            <br>
+            <input type="submit" name = "btnLogin" value="Login"/>
+            <input type = "reset" name = "btnReset" value="Rest"/>
+            <br>
+            <input type = "button" name="btnChangBackground" value="Change background" onclick="changeBackgroundColor()"/>
+        </form>
+    </body>
+</html>

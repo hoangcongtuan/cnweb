@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Frame Sets</title>
+    </head>
+        <frameset 
+            rows = "10%, *"
+            noresize = "noresize">
+            <Frame name = "banner" src = "banner.html" />
+            <frameset cols = "20%, * , 20%">
+                <frame name = "menu" src = "menu.html" />
+                <frame name = "content" src = "content.html"/>
+                <frame name = "news" src = "news.html"/>
+            </frameset>
+            <noframe>
+                <body>
+                    Trinh duyet ko ho tro frame
+                </body>
+            </noframe>
+        </frameset>
+</html>

@@ -1,0 +1,135 @@
+<html>
+
+    <head>
+        <script lang="JavaScript">
+            function toUpperCase(str) {
+                var res = "";
+                var i;
+                for(i = 0; i < str.length; i++) {
+                    if (str[i] >= 'a' && str[i] <= 'z')
+                        res += String.fromCharCode(str.charCodeAt(i) - 32);
+                    else
+                        res += str[i]
+                }
+                return res;
+            }
+
+             function toUpperLowerCase(str) {
+                var res = "";
+                var i;
+                for(i = 0; i < str.length; i++) {
+                    if (str[i] >= 'A' && str[i] <= 'Z')
+                        res += String.fromCharCode(str.charCodeAt(i) + 32);
+                    else if (str[i] >= 'a' && str[i] <= 'z')
+                        res += String.fromCharCode(str.charCodeAt(i) - 32);
+                    else
+                        res += str[i]
+                }
+                return res;
+            }
+
+            function nguyeAm(str) {
+                var table = "ueoaiUEOAI";
+                var res = "";
+                for(var i = 0; i < str.length; i++) {
+                    var c = str.charAt(i);
+                    if (table.indexOf(c) != -1)
+                        res += c;
+                }
+                return res;
+            }
+
+            function wordCount(str) {
+                str = " " + str + " ";
+                var count = 0;
+                for(var i = 0; i < str.length; i++) {
+                    while(str.charAt(i) === ' ' && i < str.length - 1)
+                        i++;
+                    if (i === str.length - 1) {
+                        //ket thuc chuoi
+                        break;
+                    }
+                    //bat dau mot tu
+                    count++;
+                    while(str.charAt(i) != ' ' && i < str.length - 1)
+                        i++;
+                    //ket thuc mot tu
+                }
+                return count;
+            }
+
+            function onBtnOKClick() {
+                var edtString = document.form1.edtString;
+                var edtUpperCase = document.form1.edtUpperCase;
+                var edtUpperLowerCase = document.form1.edtUpperLowerCase;
+                var edtNguyenAm = document.form1.edtNguyenAm;
+                var edtWordCount = document.form1.edtWordCount;
+
+                var strUpperCase = toUpperCase(edtString.value);
+                var strUpperLowerCase = toUpperLowerCase(edtString.value);
+                var strNguyenAm = nguyeAm(edtString.value);
+                var wc = wordCount(edtString.value)
+
+                edtUpperCase.value = strUpperCase;
+                edtUpperLowerCase.value = strUpperLowerCase;
+                edtNguyenAm.value = strNguyenAm;
+                edtWordCount.value = wc;
+            }
+        </script>
+    </head>
+
+    <body>
+        
+        <form name="form1" method="POST">
+            <p align="center">Xử lý chuỗi</p>
+            <p align="center">
+                <table>
+                    <tr>
+                        <td>Nhập chuỗi</td>
+                        <td>
+                            <input type="text" name="edtString" value="Hoang Cong Tuan" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Chữ hoa</td>
+                        <td>
+                            <input type="text" name="edtUpperCase" />
+                        </td>
+                        <td>
+                            <input type="button" value="ok" name="btnOk" onclick="onBtnOKClick()" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Thường hoa</td>
+                        <td>
+                            <input type="text" name="edtUpperLowerCase" />
+                        </td>
+                        <td>
+                            <input type="reset" name="btnReset" onclick="onBtnResetClick()" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Nguyên âm</td>
+                        <td>
+                            <input type="text" name="edtNguyenAm" />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Số từ</td>
+                        <td>
+                            <input type="text" name="edtWordCount" />
+                        </td>
+                    </tr>
+
+
+                </table>
+            </p>
+
+        </form>
+    </body>
+
+</html>
